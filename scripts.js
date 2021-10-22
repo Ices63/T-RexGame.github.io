@@ -1,5 +1,6 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
+const game = document.getElementById("game");
 
 function jump() {
   if (dino.classList != "jump") {

@@ -1,6 +1,13 @@
-.game {
+body {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8cf3314c-0323-479b-86bb-b943e10e9a35/da5ugsn-bedac5b1-6693-4806-931b-834e1b08e4de.jpg/v1/fill/w_1024,h_640,q_75,strp/jurassic_world_tyrannosaurus_rex_wallpaper_by_gamucha_da5ugsn-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQwIiwicGF0aCI6IlwvZlwvOGNmMzMxNGMtMDMyMy00NzliLTg2YmItYjk0M2UxMGU5YTM1XC9kYTV1Z3NuLWJlZGFjNWIxLTY2OTMtNDgwNi05MzFiLTgzNGUxYjA4ZTRkZS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.-1xIJ7vcpyvbwhBbOfM7hwPDzAAA9bPiT6X6xtj-w_g);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#game {
   width: 600px;
   height: 200px;
+  background-color: white;
   border: 1px solid black;
   margin: auto;
 }
@@ -23,7 +30,7 @@
     top: 150px;
   }
 
-    30% {
+    20% {
     top: 110px;
   }
 
@@ -31,8 +38,8 @@
     top: 70px;
   }
 
-  80% {
-    top: 110px;
+  60% {
+    top: 80px;
   }
 
   100% {
@@ -49,16 +56,32 @@
 
   background-image: url("img/cactus.png");
   background-size: 20px 40px;
+}
 
+.moveCactus {
   animation: block 3s infinite linear;
 }
 
 @keyframes block {
   0% {
     left: 580px;
+    opacity: 100%;
+  }
+
+  95% {
+    opacity: 100%;
+  }
+
+  97% {
+    opacity: 0%;
   }
 
   100% {
     left: -20px;
+    opacity: 0%;
   }
+}
+
+.Over {
+  
 }
