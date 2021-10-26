@@ -18,7 +18,7 @@ body {
   height: 100px;
   background-image: url(img/trex.png);
   background-size: 100px 100px;
-  position: relative;
+  position: absolute;
   top: 200px;
 }
 
@@ -48,22 +48,20 @@ body {
   }
 }
 
-#cactus {
+/*       *****CACTUS****        */
+.moveCactus {
   width: 30px;
   height: 60px;
   position: relative;
-  top: 140px;
+  top: 200px;
   left: 580px;
 
   background-image: url("img/cactus.png");
   background-size: 30px 60px;
+  animation: animCactus 3s linear;
 }
 
-.moveCactus {
-  animation: block 3s infinite linear;
-}
-
-@keyframes block {
+@keyframes animCactus {
   0% {
     left: 580px;
     opacity: 100%;
@@ -82,3 +80,53 @@ body {
     opacity: 0%;
   }
 }
+/*       *****CACTUS****        */
+
+/*      -----PTERO-----       */
+
+.movePtero {
+  width: 60px;
+  height: 30px;
+  position: relative;
+  top: 50px;
+  left: 550px;
+
+  background-image: url("img/ptero.png");
+  background-size: 60px 30px;
+  animation: animPtero 3s linear;
+}
+
+@keyframes animPtero {
+  0% {
+    left: 550px;
+    opacity: 100%;
+    top: 0px;
+  }
+
+  25% {
+    top: 100px;
+  }
+
+  50% {
+    top: 50px;
+  }
+
+  75% {
+    top: 100px;
+  }
+
+  97% {
+    opacity: 100%;
+  }
+
+  99% {
+    opacity: 0%;
+    top: 50px;
+  }
+
+  100% {
+    left: -10px;
+    opacity: 0%;
+  }
+}
+/*      -----PTERO-----       */
