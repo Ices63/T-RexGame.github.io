@@ -22,7 +22,7 @@ let isAlive = setInterval(function () {
   );
 
   // detect collision
-  if (cactusLeft < 40 && cactusLeft > 5 && dinoTop >= 180) {
+  if (cactusLeft < 60 && cactusLeft > 5 && dinoTop >= 180) {
     // collision
     alert("Game Over!");
   }
