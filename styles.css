@@ -13,11 +13,19 @@ body {
   margin: auto;
 }
 
-#dino {
+#points {
+  color: black;
+  font-size: 30px;
   width: 100px;
-  height: 100px;
+  position: absolute;
+}
+
+/* +++++++++++DINO++++++++++++++ */
+#dino {
+  width: 75px;
+  height: 75px;
   background-image: url(img/trex.png);
-  background-size: 100px 100px;
+  background-size: 75px 75px;
   position: absolute;
   top: 200px;
 }
@@ -31,7 +39,7 @@ body {
     top: 200px;
   }
 
-    20% {
+  20% {
     top: 130px;
   }
 
@@ -48,13 +56,19 @@ body {
   }
 }
 
+.mobs {
+  width: 600px;
+  height: 30px;
+  position: absolute;
+}
+
 /*       *****CACTUS****        */
 .moveCactus {
   width: 30px;
   height: 60px;
-  position: relative;
+  position: absolute;
   top: 200px;
-  left: 580px;
+  left: 100%;
 
   background-image: url("img/cactus.png");
   background-size: 30px 60px;
@@ -63,7 +77,7 @@ body {
 
 @keyframes animCactus {
   0% {
-    left: 580px;
+    left: 100%;
     opacity: 100%;
   }
 
@@ -80,20 +94,29 @@ body {
     opacity: 0%;
   }
 }
+
 /*       *****CACTUS****        */
 
 /*      -----PTERO-----       */
 
-.movePtero {
+.Ptero {
   width: 60px;
   height: 30px;
-  position: relative;
+  position: absolute;
   top: 50px;
   left: 550px;
 
   background-image: url("img/ptero.png");
   background-size: 60px 30px;
-  animation: animPtero 3s linear;
+}
+.fly {
+  animation: animPtero 4s linear;
+}
+.flySlow {
+  animation: animPtero 6s linear;
+}
+.flyFast {
+  animation: animPtero 2s linear;
 }
 
 @keyframes animPtero {
@@ -129,4 +152,5 @@ body {
     opacity: 0%;
   }
 }
+
 /*      -----PTERO-----       */
