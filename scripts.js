@@ -1,21 +1,45 @@
 const dino = document.getElementById("dino");
 const game = document.getElementById("game");
+const scoreBoardTitle = document.getElementById("scoreBoardTitle");
+const panel = document.getElementById("panel");
 const mobs1 = document.getElementById("mobs1");
 const mobs2 = document.getElementById("mobs2");
 const mobs3 = document.getElementById("mobs3");
-const ptero = document.getElementById("ptero");
 
 const points = document.getElementById("points");
 let pts = 0;
 let pointsHtml = toString('<p>'+pts+'</p>');
 
 const pteroHtmlId = '<div id="ptero"';
-let pteroClass, pteroAnimDuration, pteroRnd, pteroLeft;
+let ptero, pteroClass, pteroAnimDuration, pteroRnd, pteroLeft;
 
 let cactus1, cactus2, cactus3, cactusLeft1, cactusLeft2, cactusLeft3;
 const cactusHtml = '<div id="cactus1" class="moveCactus"></div>';
 
 let mobRng2, mobRng3, mobRnd;
+
+let panelPos = true;
+
+
+scoreBoardTitle.addEventListener("click", function() {
+  if (panelPos) {
+    panel.classList.remove("hide");
+    //panel.classList.add("deploy");
+    //setTimeout(function () { 
+      //panel.classList.remove("deploy");
+      panel.classList.add("show");
+     //}, 3000);
+    panelPos = false;
+  } else {
+    panel.classList.remove("show");
+    //panel.classList.add("retract");
+    //setTimeout(function () { 
+      //panel.classList.remove("retract");
+      panel.classList.add("hide");
+     //}, 3000);
+    panelPos = true;
+  }
+});
 
 
 //lance l'apparition de mobs la première fois
@@ -51,11 +75,16 @@ let isAlive = setInterval(function () {
   if (cactus3) { cactusLeft3 = parseInt(window.getComputedStyle(cactus3).getPropertyValue("left"));
   if (cactusLeft3 < 60 && cactusLeft3 > 5 && dinoTop >= 180) { over(); } }
 
+  ptero = document.getElementById("ptero");
+  if (ptero) { pteroLeft = parseInt(window.getComputedStyle(ptero).getPropertyValue("left"));
+  if (pteroLeft < 60 && pteroLeft > 5 && dinoTop <= 100) { over(); } }
+
   //actualisation de l'affichage des points
   pts += 5;  pointsHtml = '<p>'+pts+'</p>';  points.innerHTML = pointsHtml;
 }, 10);
 
 function over() {
+  pts = 0;
   console.log("Game Over!");
 }
 
@@ -77,6 +106,9 @@ function jump() {
 // INVOKE ++++++++++++++++++                                                ++++++++++++++++++ INVOKE
 function mobSpawn() {
   //détermine le nombre de mobs
+  spawn1(); spawn2(); spawn3(); spawnPtero();
+
+  /*
   mobRnd = Math.floor((Math.random()*5)+1);
 
   switch (mobRnd) {
@@ -97,7 +129,7 @@ function mobSpawn() {
   
     default: spawn1();
       break;
-  }
+  }*/
 }
 
 function spawn1() {
@@ -109,14 +141,14 @@ function spawn1() {
 
 function spawn2() {
   //détermine les espacements de temps entre les mobs
-  mobRng2=Math.floor((Math.random()*100)+100);
+  mobRng2=Math.floor((Math.random()*1000)+2000);
 
   setTimeout(function () {mobs2.innerHTML = cactusHtml;}, mobRng2);
   setTimeout(function () {mobs2.innerHTML = "";}, 3000 + mobRng2);
 }
 
 function spawn3() {
-  mobRng3=Math.floor((Math.random()*100)+200);
+  mobRng3=Math.floor((Math.random()*1000)+4000);
   setTimeout(function () {mobs3.innerHTML = cactusHtml;}, mobRng3);
   setTimeout(function () {mobs3.innerHTML = "";}, 3000 + mobRng3);
 }
@@ -146,6 +178,6 @@ function spawnPtero() {
       break;
   }
 
-  setTimeout(function () {ptero.innerHTML = pteroHtmlId+pteroHtmlClass;}, 1000 + pteroRnd);
-  setTimeout(function () {ptero.innerHTML = "";}, pteroAnimDuration + 1000 + pteroRnd);
+  setTimeout(function () {mobs4.innerHTML = pteroHtmlId+pteroHtmlClass;}, 1000 + pteroRnd);
+  setTimeout(function () {mobs4.innerHTML = "";}, pteroAnimDuration + 1000 + pteroRnd);
 }

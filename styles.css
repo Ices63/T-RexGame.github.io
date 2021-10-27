@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #002000;
+  background-attachment: fixed;
 }
 
 #game {
@@ -11,6 +12,95 @@ body {
   background-color: hsla(0, 100%, 100%, 0.8);
   border: 1px solid black;
   margin: auto;
+}
+#game hr {
+  width: 598px;
+  position: absolute;
+  margin-top: 250px;
+}
+
+#scoreBoardTitle {
+  width: 600px;
+  height: 100px;
+  background-color: rgba(27, 35, 78, 0.8);
+  color: white;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.hide {
+  display: none;
+}
+.deploy {
+  display: block;
+  animation: deploy 2s linear;
+}
+.show {
+  display: block;
+  width: auto;
+}
+.retract {
+  display: block;
+  animation: retract 2s linear;
+}
+@keyframes deploy {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: auto;
+  }
+}
+@keyframes retract {
+  0% {
+    height: auto;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+#scoreBoard {
+  width: 600px;
+  height: 800px;
+  background-color: hsla(0, 100%, 100%, 0.8);
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid black;
+  margin: auto;
+}
+#scoreBoard > div > div {
+  border: black solid 1px;
+  position: relative;
+  float: left;
+}
+#name {
+  width: 200px;
+}
+#score {
+  width: 394px;
+}
+
+#switch {
+  width: 600px;
+  height: 50px;
+  background-color: hsla(0, 100%, 100%, 0.8);
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid black;
+  margin: auto;
+}
+#switch button, #switch p {
+  position: relative;
+  float: left;
+  width: 200px;
+}
+#switch button {
+  margin-top: 20px;
 }
 
 #points {
@@ -43,8 +133,12 @@ body {
     top: 130px;
   }
 
+  40% {
+    top: 100px;
+  }
+
   50% {
-    top: 70px;
+    top: 90px;
   }
 
   60% {
@@ -98,7 +192,6 @@ body {
 /*       *****CACTUS****        */
 
 /*      -----PTERO-----       */
-
 .Ptero {
   width: 60px;
   height: 30px;
