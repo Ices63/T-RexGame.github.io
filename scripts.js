@@ -86,6 +86,13 @@ let isAlive = setInterval(function () {
 function over() {
   pts = 0;
   console.log("Game Over!");
+  if (confirm("Game Over! Voulez-vous recommencer ou quitter?")) {
+    // Code à éxécuter si le l'utilisateur clique sur "OK"
+
+  } else {
+    // Code à éxécuter si l'utilisateur clique sur "Annuler" 
+    window.close();
+  }
 }
 
 
